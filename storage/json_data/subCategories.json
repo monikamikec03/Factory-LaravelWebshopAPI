@@ -1,0 +1,47 @@
+{
+    "categories": [
+        {
+            "id": 2,
+            "name": "Laptops",
+            "description": "Find powerful laptops for your computing needs.",
+            "thumbnail": "laptops-thumbnail.jpg",
+            "parent_id": 1
+        },
+        {
+            "id": 3,
+            "name": "Smartphones",
+            "description": "Discover the latest smartphones with advanced features.",
+            "parent_id": 1
+        },
+        {
+            "id": 5,
+            "name": "Men's Clothing",
+            "description": "Shop for stylish men's clothing.",
+            "parent_id": 4
+        },
+        {
+            "id": 6,
+            "name": "Women's Clothing",
+            "description": "Explore a wide range of women's clothing options.",
+            "parent_id": 4
+        },
+        {
+            "id": 8,
+            "name": "Cookware",
+            "description": "Find high-quality cookware for your kitchen.",
+            "parent_id": 7
+        },
+        {
+            "id": 10,
+            "name": "Sneakers",
+            "description": "Explore our stylish and comfortable sneakers.",
+            "parent_id": 9
+        },
+        {
+            "id": 12,
+            "name": "Skincare",
+            "description": "Nourish your skin with our effective skincare products.",
+            "parent_id": 11
+        }
+    ]
+}

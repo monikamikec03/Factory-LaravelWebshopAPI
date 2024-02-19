@@ -1,0 +1,34 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Electronics",
+            "description": "Explore the latest gadgets and electronic devices.",
+            "parent_id": null
+        },
+        {
+            "id": 4,
+            "name": "Clothing",
+            "description": "Express yourself with our trendy and fashionable clothing items.",
+            "parent_id": null
+        },
+        {
+            "id": 7,
+            "name": "Home & Kitchen",
+            "description": "Enhance your living space with our home and kitchen products.",
+            "parent_id": null
+        },
+        {
+            "id": 9,
+            "name": "Footwear",
+            "description": "Step out in style with our collection of footwear.",
+            "parent_id": null
+        },
+        {
+            "id": 11,
+            "name": "Beauty & Personal Care",
+            "description": "Take care of yourself with our beauty and personal care products.",
+            "parent_id": null
+        }
+    ]
+}
