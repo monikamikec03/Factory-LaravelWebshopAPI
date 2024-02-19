@@ -19,8 +19,8 @@ Pokretanje servera: php artisan serve
 Prikaz svih proizvoda: http://127.0.0.1:8000/products (na ovom urlu je moguće testirati filtriranje proizvoda ovisno o kategoriji, minimalnoj i maksimalnoj cijeni, nazivu kao i sortiranje po nazivu i cijeni)
 Prikaz pojedinačnog proizvoda: http://127.0.0.1:8000/products/1
 Kreiranje narudžbe putem postmana: http://127.0.0.1:8000/store
-Primjer ubaciti u Postman/raw/json:
-Body:
+Primjer ubaciti u
+- Body:
 {
     "total_price": "{{total_price}}",
     "products": [
@@ -62,7 +62,7 @@ Body:
     "created_at": "2024-02-19 10:40:00",
     "updated_at": "2024-02-19 10:45:00"
 }
-Pre-request Script:
+- Pre-request Script:
 try {
     const requestBody = JSON.parse(pm.request.data);
     const totalPrice = requestBody.products.reduce((sum, product) => {
