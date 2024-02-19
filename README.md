@@ -48,7 +48,7 @@ Primjer ubaciti u Postman/raw/json:
 
 
 Sadržaj
-Izvorni kod: https://github.com/monikamikec03/LaravelWebshopAPI/tree/master
+Izvorni kod: [https://github.com/monikamikec03/LaravelWebshopAPI/tree/master](https://github.com/monikamikec03/Factory-LaravelWebshopAPI/tree/development)
 Baza podataka: wehshopapi.sql
 Postman kolekcija: Factory - WebshopAPI.postman_collection.json
 EER dijagram: EER - Factory.mwb
