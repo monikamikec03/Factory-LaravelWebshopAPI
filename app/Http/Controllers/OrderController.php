@@ -12,7 +12,6 @@ class OrderController extends Controller
         $request->validate([
             'products' => 'required|array',
             'stopa_poreza' => 'required|numeric',
-            'popust' => 'required|numeric',
             'ime_prezime' => 'required|string',
             'email' => 'required|email',
             'broj_telefona' => 'required|string',
@@ -28,11 +27,13 @@ class OrderController extends Controller
             return $carry + ($product['price'] * $product['quantity']);
         }, 0);
 
+        $discount = $totalPrice > 100 ? 10 : 0;
+
         $order = new Order([
             'total_price' => $totalPrice,
             'products' => json_encode($request->input('products')),
             'stopa_poreza' => $request->input('stopa_poreza'),
-            'popust' => $request->input('popust'),
+            'popust' => $discount,
             'ime_prezime' => $request->input('ime_prezime'),
             'email' => $request->input('email'),
             'broj_telefona' => $request->input('broj_telefona'),
