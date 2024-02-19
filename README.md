@@ -20,35 +20,74 @@ Prikaz svih proizvoda: http://127.0.0.1:8000/products (na ovom urlu je moguće t
 Prikaz pojedinačnog proizvoda: http://127.0.0.1:8000/products/1
 Kreiranje narudžbe putem postmana: http://127.0.0.1:8000/store
 Primjer ubaciti u Postman/raw/json:
+Body:
 {
-    "total_price": 150.50,
+    "total_price": "{{total_price}}",
     "products": [
         {
-            "name": "Product A",
-            "price": 20.00,
+            "name": "Salata",
+            "price": 1.36,
             "quantity": 2
         },
         {
-            "name": "Product B",
-            "price": 30.50,
+            "name": "Paprika",
+            "price": 2.50,
             "quantity": 1
+        },
+        {
+            "name": "Sol",
+            "price": 1.30,
+            "quantity": 1
+        },
+        {
+            "name": "Prasak za rublje",
+            "price": 45,
+            "quantity": 2
+        },
+        {
+            "name": "Cigarete",
+            "price": 5.60,
+            "quantity": 3
         }
+
     ],
     "stopa_poreza": 0.25,
-    "popust": 10.00,
-    "ime_prezime": "John Doe",
-    "email": "john.doe@example.com",
-    "broj_telefona": "123-456-789",
-    "adresa": "123 Main Street",
-    "grad": "City",
-    "drzava": "Country",
-    "created_at": "2024-02-16 12:00:00",
-    "updated_at": "2024-02-16 12:30:00"
+    "popust": "{{popust}}",
+    "ime_prezime": "Monika Mikec",
+    "email": "monikamikec03@gmail.com",
+    "broj_telefona": "0993371858",
+    "adresa": "Cugovec 41",
+    "grad": "Gradec",
+    "drzava": "Hrvatska",
+    "created_at": "2024-02-19 10:40:00",
+    "updated_at": "2024-02-19 10:45:00"
+}
+Pre-request Script:
+try {
+    const requestBody = JSON.parse(pm.request.data);
+    const totalPrice = requestBody.products.reduce((sum, product) => {
+        return sum + (product.price * product.quantity);
+    }, 0);
+
+    pm.environment.set('total_price', totalPrice.toFixed(2));
+
+    if (totalPrice > 100) {
+        pm.environment.set('popust', '10.00');
+    } else {
+        pm.environment.set('popust', '0.00');
+    }
+
+    requestBody.total_price = pm.environment.get('total_price');
+    requestBody.popust = pm.environment.get('popust');
+    pm.request.data = JSON.stringify(requestBody);
+
+} catch (error) {
+    console.error("Error parsing JSON:", error.message);
 }
 
 
 Sadržaj
-Izvorni kod: [https://github.com/monikamikec03/LaravelWebshopAPI/tree/master](https://github.com/monikamikec03/Factory-LaravelWebshopAPI/tree/development)
+Izvorni kod: https://github.com/monikamikec03/Factory-LaravelWebshopAPI/tree/development
 Baza podataka: wehshopapi.sql
 Postman kolekcija: Factory - WebshopAPI.postman_collection.json
 EER dijagram: EER - Factory.mwb
